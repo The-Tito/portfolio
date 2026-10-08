@@ -1,15 +1,17 @@
-import { locale as getLocaleParam } from "next/root-params";
+import { sectionIds } from "@/content/site";
+import { getCurrentDictionary } from "@/i18n/server";
 
-import { isLocale } from "@/i18n/config";
-import { getDictionary } from "@/i18n/dictionaries";
-
+/** Phase 1 scaffold: placeholder sections to exercise the layout chrome. Replaced in phase 2. */
 export default async function HomePage() {
-  const locale = await getLocaleParam();
-  const { meta } = await getDictionary(isLocale(locale) ? locale : "en");
+  const { t } = await getCurrentDictionary();
 
   return (
-    <main className="grid min-h-dvh place-items-center p-6">
-      <h1 className="text-2xl font-semibold tracking-tight">{meta.title}</h1>
+    <main id="main">
+      <section id={sectionIds.top} className="grid min-h-dvh place-items-center">
+        <h1 className="text-5xl font-semibold tracking-tight">{t.meta.title}</h1>
+      </section>
+      <section id={sectionIds.projects} className="min-h-dvh border-t border-line" />
+      <section id={sectionIds.contact} className="min-h-dvh border-t border-line" />
     </main>
   );
 }
