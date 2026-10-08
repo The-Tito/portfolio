@@ -15,7 +15,7 @@
   --line: rgb(17 18 20 / 0.12);
   --fg: #111214;
   --muted: #5c5f66;
-  --subtle: #8c8c87;
+  --subtle: #7c7c77; /* ≥3:1 on --bg for large text */
   --dot: rgb(17 18 20 / 0.12);
   --dock: rgb(251 250 247 / 0.78);
   --ok: #047857;

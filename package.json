@@ -13,6 +13,8 @@
     "i18n:check": "node scripts/check-i18n.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "lenis": "^1.3.26",
     "next": "16.4.0",
     "react": "19.3.0",

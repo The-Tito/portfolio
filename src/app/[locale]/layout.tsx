@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Six_Caps } from "next/font/google";
 
@@ -82,13 +84,19 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
           locale={locale}
           labels={{
             brand: t.common.brand,
-            home: t.nav.home,
             language: t.common.language,
             theme: t.common.theme,
           }}
         />
         {children}
         <Dock labels={t.nav} cvHref={site.cv[locale]} />
+        {/* Vercel serves these endpoints only on its platform; skip them elsewhere. */}
+        {process.env.VERCEL && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   );
