@@ -1,4 +1,5 @@
 import { Footer } from "@/components/layout/footer";
+import { PersonJsonLd } from "@/components/layout/person-json-ld";
 import { Contact } from "@/components/sections/contact";
 import { ContactForm } from "@/components/sections/contact-form";
 import { Experience } from "@/components/sections/experience";
@@ -15,6 +16,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <PersonJsonLd locale={locale} description={t.meta.description} />
       <main id="main">
         <Hero />
         <TechMarquee />

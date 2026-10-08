@@ -17,13 +17,14 @@ cp .env.example .env.local   # completar valores locales; nunca se suben al repo
 npm run dev
 ```
 
-| Script              | Descripción            |
-| ------------------- | ---------------------- |
-| `npm run dev`       | Servidor de desarrollo |
-| `npm run build`     | Build de producción    |
-| `npm run lint`      | ESLint                 |
-| `npm run typecheck` | Verificación de tipos  |
-| `npm run format`    | Prettier               |
+| Script               | Descripción                                   |
+| -------------------- | --------------------------------------------- |
+| `npm run dev`        | Servidor de desarrollo                        |
+| `npm run build`      | Build de producción                           |
+| `npm run lint`       | ESLint                                        |
+| `npm run typecheck`  | Verificación de tipos                         |
+| `npm run format`     | Prettier                                      |
+| `npm run i18n:check` | Verifica que ES y EN tengan las mismas claves |
 
 ## Estructura
 
