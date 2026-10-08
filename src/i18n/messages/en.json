@@ -30,14 +30,31 @@
     "status": "Open to opportunities · Mexico & remote",
     "scroll": "Scroll",
     "diagram": {
-      "client": { "title": "Client", "detail": "web · mobile" },
-      "api": { "title": "API", "detail": "REST · auth" },
-      "llm": { "title": "LLM", "detail": "generation" },
-      "sql": { "title": "SQL", "detail": "PostgreSQL" },
-      "jobs": { "title": "Jobs", "detail": "tasks" }
+      "client": {
+        "title": "Client",
+        "detail": "web · mobile"
+      },
+      "api": {
+        "title": "API",
+        "detail": "REST · auth"
+      },
+      "llm": {
+        "title": "LLM",
+        "detail": "generation"
+      },
+      "sql": {
+        "title": "SQL",
+        "detail": "PostgreSQL"
+      },
+      "jobs": {
+        "title": "Jobs",
+        "detail": "tasks"
+      }
     }
   },
-  "marquee": { "aria": "Core technologies" },
+  "marquee": {
+    "aria": "Core technologies"
+  },
   "index": {
     "label": "Contents",
     "description": "Profile, professional experience, projects, tech stack and contact.",
@@ -105,16 +122,29 @@
         "tagline": "Spaced-repetition learning powered by AI.",
         "description": "Turns PDF documents into AI-generated summaries and quizzes, and measures student retention at two points: right after studying and 48 hours later.",
         "facts": [
-          { "label": "Role", "value": "Backend Developer" },
-          { "label": "Team", "value": "3 members" },
-          { "label": "Year", "value": "2026" }
+          {
+            "label": "Role",
+            "value": "Backend Developer"
+          },
+          {
+            "label": "Team",
+            "value": "3 members"
+          },
+          {
+            "label": "Year",
+            "value": "2026"
+          }
         ],
         "highlights": [
           "Service-oriented REST API in Node.js and TypeScript",
           "Summaries, quizzes and automated grading with Gemini",
           "JWT authentication with rotating refresh tokens"
         ],
-        "links": { "live": "Visit site", "backend": "Backend code", "infra": "Infrastructure" },
+        "links": {
+          "live": "Visit site",
+          "backend": "Backend code",
+          "infra": "Infrastructure"
+        },
         "imageAlt": "AI-generated summary in ReadFlow",
         "secondaryImageAlt": "Results of the 48-hour spaced quiz in ReadFlow"
       },
@@ -123,16 +153,27 @@
         "tagline": "Step-by-step Python algorithm visualizer.",
         "description": "Runs solutions to technical interview problems step by step and shows the state of every data structure in real time. Built to support educational content about algorithms.",
         "facts": [
-          { "label": "Role", "value": "End-to-end development" },
-          { "label": "Technology", "value": "Pyodide · WebAssembly" },
-          { "label": "Hosting", "value": "Cloudflare Pages" }
+          {
+            "label": "Role",
+            "value": "End-to-end development"
+          },
+          {
+            "label": "Technology",
+            "value": "Pyodide · WebAssembly"
+          },
+          {
+            "label": "Hosting",
+            "value": "Cloudflare Pages"
+          }
         ],
         "highlights": [
           "Python runs directly in the browser, no server required",
           "Visualizes arrays, pointers, dictionaries, stacks, linked lists and trees",
           "Playback, speed controls and keyboard navigation"
         ],
-        "links": { "live": "View project" },
+        "links": {
+          "live": "View project"
+        },
         "imageAlt": "Warik running Reverse Linked List step by step"
       },
       "laberinto": {
@@ -140,15 +181,26 @@
         "tagline": "An introduction to programming through levels.",
         "description": "Web game where players solve mazes by writing programs with Spanish-language instructions, applying sequences, loops and conditionals.",
         "facts": [
-          { "label": "Role", "value": "End-to-end development" },
-          { "label": "Content", "value": "4 levels + bonus" },
-          { "label": "Privacy", "value": "No sign-up, no cookies" }
+          {
+            "label": "Role",
+            "value": "End-to-end development"
+          },
+          {
+            "label": "Content",
+            "value": "4 levels + bonus"
+          },
+          {
+            "label": "Privacy",
+            "value": "No sign-up, no cookies"
+          }
         ],
         "highlights": [
           "Custom interpreter for a Spanish-language instruction set",
           "Animated execution with a slow-motion mode"
         ],
-        "links": { "live": "View project" },
+        "links": {
+          "live": "View project"
+        },
         "imageAlt": "Laberinto game, level 1"
       }
     },
@@ -232,5 +284,10 @@
     "email": "Email",
     "backToTop": "Back to top",
     "rights": "© 2026 Antonio Selvas"
+  },
+  "notFound": {
+    "title": "Page not found.",
+    "text": "The page you're looking for doesn't exist or has moved.",
+    "back": "Back to home"
   }
 }

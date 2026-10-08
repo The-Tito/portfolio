@@ -9,8 +9,9 @@ import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { ThemeScript } from "@/components/layout/theme-script";
 import { TopBar } from "@/components/layout/top-bar";
 import { site } from "@/content/site";
-import { locales } from "@/i18n/config";
+import { defaultLocale, locales, type Locale } from "@/i18n/config";
 import { getCurrentDictionary } from "@/i18n/server";
+import { getSiteUrl } from "@/lib/site-url";
 
 import "@/styles/globals.css";
 
@@ -18,13 +19,39 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 const sixCaps = Six_Caps({ variable: "--font-six-caps", subsets: ["latin"], weight: "400" });
 
+const ogLocale: Record<Locale, string> = { es: "es_MX", en: "en_US" };
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { t } = await getCurrentDictionary();
-  return { title: t.meta.title, description: t.meta.description };
+  const { locale, t } = await getCurrentDictionary();
+
+  return {
+    metadataBase: new URL(getSiteUrl()),
+    title: t.meta.title,
+    description: t.meta.description,
+    authors: [{ name: site.name }],
+    creator: site.name,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, `/${l}`])),
+        "x-default": `/${defaultLocale}`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      siteName: site.name,
+      title: t.meta.title,
+      description: t.meta.description,
+      url: `/${locale}`,
+      locale: ogLocale[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocale[l]),
+    },
+    twitter: { card: "summary_large_image", title: t.meta.title, description: t.meta.description },
+  };
 }
 
 export default async function LocaleLayout({ children }: LayoutProps<"/[locale]">) {
