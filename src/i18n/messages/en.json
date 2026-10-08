@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "title": "Antonio Selvas — Backend & AI",
+    "description": "Backend developer who brings AI into real products. Node.js, TypeScript, PostgreSQL and Flutter."
+  },
+  "common": {
+    "brand": "Antonio Selvas / Backend & AI",
+    "loader": "Antonio Selvas — Portfolio 2026",
+    "skipToContent": "Skip to content",
+    "language": "Language",
+    "theme": "Toggle theme",
+    "opensInNewTab": "(opens in a new tab)"
+  },
+  "nav": {
+    "aria": "Main navigation",
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cv": "Download CV"
+  },
+  "hero": {
+    "line1": "Hi, I'm Antonio,",
+    "line2": "a backend developer",
+    "line3Before": "who brings",
+    "line3Accent": "AI",
+    "line4": "into real products.",
+    "lead": "Software developer specialized in Node.js, TypeScript and PostgreSQL. I build APIs, secure authentication and integrations with language models, as well as mobile apps with Flutter.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Contact",
+    "status": "Open to opportunities · Mexico & remote",
+    "scroll": "Scroll",
+    "diagram": {
+      "client": {
+        "title": "Client",
+        "detail": "web · mobile"
+      },
+      "api": {
+        "title": "API",
+        "detail": "REST · auth"
+      },
+      "llm": {
+        "title": "LLM",
+        "detail": "generation"
+      },
+      "sql": {
+        "title": "SQL",
+        "detail": "PostgreSQL"
+      },
+      "jobs": {
+        "title": "Jobs",
+        "detail": "tasks"
+      }
+    }
+  },
+  "marquee": {
+    "aria": "Core technologies"
+  },
+  "index": {
+    "label": "Contents",
+    "description": "Profile, professional experience, projects, tech stack and contact.",
+    "items": {
+      "profile": "Profile",
+      "experience": "Experience",
+      "projects": "Projects",
+      "stack": "Stack",
+      "contact": "Contact"
+    }
+  },
+  "profile": {
+    "label": "Profile",
+    "statement": "Solid backends, well-modeled data and AI built into real products.",
+    "subLabel": "Professional profile",
+    "paragraphs": [
+      "My work centers on server-side architecture: REST APIs with Node.js and TypeScript, data modeling in PostgreSQL, secure authentication and continuous integration and delivery pipelines with Docker and GitHub Actions.",
+      "I complement this with mobile development in Flutter and Kotlin. I'm currently going deeper into bringing language models into products: content generation, automated assessment and conversational experiences."
+    ]
+  },
+  "experience": {
+    "label": "Experience",
+    "titleStrong": "Professional",
+    "titleMuted": "experience.",
+    "items": {
+      "ravantech": {
+        "period": "May — Aug 2026",
+        "type": "Professional internship · Tuxtla Gutiérrez",
+        "role": "Mobile Developer · Flutter",
+        "company": "RavanTech",
+        "product": "Kotoba",
+        "summary": "Kotoba is an app for learning English and Mandarin Chinese through voice conversations with an AI agent. I was responsible for building the mobile app.",
+        "highlights": [
+          {
+            "title": "Architecture.",
+            "text": "Set up the project foundation with Clean Architecture, feature-based organization and Riverpod for state management."
+          },
+          {
+            "title": "Voice conversation.",
+            "text": "Built the audio recording, upload and playback flow, with idempotency keys and retries with exponential backoff."
+          },
+          {
+            "title": "Authentication.",
+            "text": "Integrated persistent sessions with Supabase, profiles protected by Row Level Security and route-level access control."
+          },
+          {
+            "title": "Quality and design.",
+            "text": "Set up continuous integration in GitHub Actions as a merge requirement, and a Material 3 design system with semantic tokens."
+          }
+        ],
+        "caption": "Images from Kotoba's public website",
+        "imageAltDesktop": "Kotoba's public website: an AI language tutor that talks with you",
+        "imageAltMobile": "Kotoba's public website on a phone"
+      }
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Projects.",
+    "architectureAria": "Architecture",
+    "othersLabel": "Other projects",
+    "items": {
+      "readflow": {
+        "tag": "Applied AI · Backend",
+        "tagline": "Spaced-repetition learning powered by AI.",
+        "description": "Turns PDF documents into AI-generated summaries and quizzes, and measures student retention at two points: right after studying and 48 hours later.",
+        "facts": [
+          {
+            "label": "Role",
+            "value": "Backend Developer"
+          },
+          {
+            "label": "Team",
+            "value": "3 members"
+          },
+          {
+            "label": "Year",
+            "value": "2026"
+          }
+        ],
+        "highlights": [
+          "Service-oriented REST API in Node.js and TypeScript",
+          "Summaries, quizzes and automated grading with Gemini",
+          "JWT authentication with rotating refresh tokens"
+        ],
+        "links": {
+          "live": "Visit site",
+          "backend": "Backend code",
+          "infra": "Infrastructure"
+        },
+        "imageAlt": "AI-generated summary in ReadFlow",
+        "secondaryImageAlt": "Results of the 48-hour spaced quiz in ReadFlow"
+      },
+      "warik": {
+        "tag": "Educational tool",
+        "tagline": "Step-by-step Python algorithm visualizer.",
+        "description": "Runs solutions to technical interview problems step by step and shows the state of every data structure in real time. Built to support educational content about algorithms.",
+        "facts": [
+          {
+            "label": "Role",
+            "value": "End-to-end development"
+          },
+          {
+            "label": "Technology",
+            "value": "Pyodide · WebAssembly"
+          },
+          {
+            "label": "Hosting",
+            "value": "Cloudflare Pages"
+          }
+        ],
+        "highlights": [
+          "Python runs directly in the browser, no server required",
+          "Visualizes arrays, pointers, dictionaries, stacks, linked lists and trees",
+          "Playback, speed controls and keyboard navigation"
+        ],
+        "links": {
+          "live": "View project"
+        },
+        "imageAlt": "Warik running Reverse Linked List step by step"
+      },
+      "laberinto": {
+        "tag": "Educational game",
+        "tagline": "An introduction to programming through levels.",
+        "description": "Web game where players solve mazes by writing programs with Spanish-language instructions, applying sequences, loops and conditionals.",
+        "facts": [
+          {
+            "label": "Role",
+            "value": "End-to-end development"
+          },
+          {
+            "label": "Content",
+            "value": "4 levels + bonus"
+          },
+          {
+            "label": "Privacy",
+            "value": "No sign-up, no cookies"
+          }
+        ],
+        "highlights": [
+          "Custom interpreter for a Spanish-language instruction set",
+          "Animated execution with a slow-motion mode"
+        ],
+        "links": {
+          "live": "View project"
+        },
+        "imageAlt": "Laberinto game, level 1"
+      }
+    },
+    "others": {
+      "antropometrico": {
+        "name": "Anthropometric System",
+        "description": "Backend that computes anthropometric measurements for clinical records."
+      },
+      "finanzapp": {
+        "name": "FinanzApp",
+        "description": "Android app for shared expenses with real-time sync."
+      },
+      "municipal": {
+        "name": "Public Services Monitoring",
+        "description": "Mobile interface for managing municipal waste collection."
+      },
+      "delivery": {
+        "name": "Delivery Platform",
+        "description": "Web app with a REST API and three roles: customer, restaurant and courier."
+      }
+    }
+  },
+  "stack": {
+    "label": "Stack",
+    "titleStrong": "Tech",
+    "titleMuted": "stack.",
+    "groups": {
+      "backend": "Backend & APIs",
+      "ai": "Artificial intelligence",
+      "data": "Databases",
+      "mobile": "Mobile",
+      "frontend": "Frontend",
+      "devops": "DevOps & cloud"
+    }
+  },
+  "education": {
+    "label": "Education",
+    "items": [
+      {
+        "title": "B.S. in Software Engineering",
+        "org": "Universidad Politécnica de Chiapas",
+        "meta": "2024 — Present"
+      },
+      {
+        "title": "AWS Academy Cloud Foundations",
+        "org": "Amazon Web Services",
+        "meta": "Certification"
+      },
+      {
+        "title": "Python Programming Fundamentals",
+        "org": "Universidad Politécnica de Chiapas",
+        "meta": "Certification"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "titleStrong": "Let's work",
+    "titleMuted": "together.",
+    "lead": "Open to backend or full-stack developer opportunities, in Mexico or remotely.",
+    "cv": "Download CV",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Full name",
+      "email": "Email",
+      "emailPlaceholder": "name@company.com",
+      "message": "Message",
+      "messagePlaceholder": "Details about the project or the role",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Thanks, your message was sent. I'll get back to you soon.",
+      "error": "The message couldn't be sent. Please try again or email me directly.",
+      "invalid": "Please review the highlighted fields."
+    }
+  },
+  "footer": {
+    "role": "Software Developer · Backend & applied AI",
+    "sections": "Sections",
+    "social": "Social",
+    "contact": "Contact",
+    "email": "Email",
+    "backToTop": "Back to top",
+    "rights": "© 2026 Antonio Selvas"
+  },
+  "notFound": {
+    "title": "Page not found.",
+    "text": "The page you're looking for doesn't exist or has moved.",
+    "back": "Back to home"
+  }
+}
