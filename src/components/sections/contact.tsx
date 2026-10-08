@@ -9,8 +9,8 @@ const socials = [
   { name: "Instagram", href: site.links.instagram, handle: "@_antonio.selvas" },
 ] as const;
 
-/** Contact section. The form column is added with the contact server action (phase 5). */
-export async function Contact({ form }: { form?: React.ReactNode }) {
+/** Contact section; the client-side form is injected so this stays a Server Component. */
+export async function Contact({ form }: { form: React.ReactNode }) {
   const { locale, t } = await getCurrentDictionary();
   const contact = t.contact;
 
