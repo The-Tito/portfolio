@@ -203,6 +203,119 @@
 }
 
 /* ------------------------------------------------------------------ */
+/* Section patterns                                                    */
+/* ------------------------------------------------------------------ */
+@utility dot-grid {
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.4px);
+  background-size: 28px 28px;
+}
+
+/* Tech marquee: two identical sets translated by -50% for a seamless loop. */
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--muted);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hero system diagram: packets travelling along the connectors. */
+.packet-h::after,
+.packet-v::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.packet-h::after {
+  top: -2.5px;
+  left: 0;
+  animation: packet-x 2.4s var(--ease-in-out-quart) infinite;
+  animation-delay: var(--packet-delay, 0s);
+}
+
+.packet-v::after {
+  left: -2.5px;
+  top: 0;
+  animation: packet-y 2.4s var(--ease-in-out-quart) infinite;
+}
+
+@keyframes packet-x {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes packet-y {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Architecture pipes inside project cards. */
+.pipe {
+  background-image: linear-gradient(90deg, var(--accent) 50%, transparent 50%);
+  background-size: 8px 2px;
+  animation: pipe-flow 0.8s linear infinite;
+}
+
+@keyframes pipe-flow {
+  to {
+    background-position: 8px 0;
+  }
+}
+
+/*
+ * Stacked project cards. Each card scrolls fully into view before it sticks:
+ * top = min(96px, viewport − card height − gap). `--card-h` is measured on the
+ * client (ResizeObserver) and `--stack-index` staggers the stacked edges.
+ */
+.project-card {
+  position: sticky;
+  top: calc(min(96px, 100vh - var(--card-h, 820px) - 56px) + var(--stack-index, 0) * 20px);
+}
+
+@media (max-width: 1080px) {
+  .project-card {
+    position: relative;
+    top: auto;
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /* Theme switch — circular reveal via View Transitions API             */
 /* ------------------------------------------------------------------ */
 ::view-transition-old(root),
