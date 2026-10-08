@@ -1,0 +1,8 @@
+# Notas privadas del proyecto (no se publican)
+docs/
+
+# Capturas en bruto; las versiones optimizadas irán en public/
+assets/captures/
+
+# macOS
+.DS_Store
