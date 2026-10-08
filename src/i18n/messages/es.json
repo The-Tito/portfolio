@@ -8,7 +8,8 @@
     "loader": "Antonio Selvas — Portafolio 2026",
     "skipToContent": "Saltar al contenido",
     "language": "Idioma",
-    "theme": "Cambiar tema"
+    "theme": "Cambiar tema",
+    "opensInNewTab": "(se abre en una pestaña nueva)"
   },
   "nav": {
     "aria": "Navegación principal",
@@ -16,5 +17,220 @@
     "projects": "Proyectos",
     "contact": "Contacto",
     "cv": "Descargar CV"
+  },
+  "hero": {
+    "line1": "Hola, soy Antonio,",
+    "line2": "desarrollador backend",
+    "line3Before": "que integra",
+    "line3Accent": "IA",
+    "line4": "en productos reales.",
+    "lead": "Desarrollador de software especializado en Node.js, TypeScript y PostgreSQL. Construyo APIs, autenticación segura e integraciones con modelos de lenguaje, además de aplicaciones móviles con Flutter.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contacto",
+    "status": "Abierto a oportunidades · México y remoto",
+    "scroll": "Scroll",
+    "diagram": {
+      "client": { "title": "Cliente", "detail": "web · móvil" },
+      "api": { "title": "API", "detail": "REST · auth" },
+      "llm": { "title": "LLM", "detail": "generación" },
+      "sql": { "title": "SQL", "detail": "PostgreSQL" },
+      "jobs": { "title": "Jobs", "detail": "tareas" }
+    }
+  },
+  "marquee": { "aria": "Tecnologías principales" },
+  "index": {
+    "label": "Contenido",
+    "description": "Perfil, experiencia profesional, proyectos, stack técnico y contacto.",
+    "items": {
+      "profile": "Perfil",
+      "experience": "Experiencia",
+      "projects": "Proyectos",
+      "stack": "Stack",
+      "contact": "Contacto"
+    }
+  },
+  "profile": {
+    "label": "Perfil",
+    "statement": "Backend sólido, datos bien modelados e IA integrada en productos reales.",
+    "subLabel": "Perfil profesional",
+    "paragraphs": [
+      "Mi trabajo se centra en la arquitectura del lado del servidor: APIs REST con Node.js y TypeScript, modelado de datos en PostgreSQL, autenticación segura y pipelines de integración y despliegue continuo con Docker y GitHub Actions.",
+      "Complemento este perfil con desarrollo móvil en Flutter y Kotlin. Actualmente profundizo en la integración de modelos de lenguaje en productos: generación de contenido, evaluación automática y experiencias conversacionales."
+    ]
+  },
+  "experience": {
+    "label": "Experiencia",
+    "titleStrong": "Experiencia",
+    "titleMuted": "profesional.",
+    "items": {
+      "ravantech": {
+        "period": "May — Ago 2026",
+        "type": "Estadía profesional · Tuxtla Gutiérrez",
+        "role": "Mobile Developer · Flutter",
+        "company": "RavanTech",
+        "product": "Kotoba",
+        "summary": "Kotoba es una aplicación para aprender inglés y chino mandarín mediante conversación por voz con un agente de IA. Fui responsable del desarrollo de la aplicación móvil.",
+        "highlights": [
+          {
+            "title": "Arquitectura.",
+            "text": "Definí la base del proyecto con Clean Architecture, organización por funcionalidades y Riverpod para la gestión de estado."
+          },
+          {
+            "title": "Conversación por voz.",
+            "text": "Implementé el flujo de grabación, envío y reproducción de audio, con claves de idempotencia y reintentos con backoff exponencial."
+          },
+          {
+            "title": "Autenticación.",
+            "text": "Integré sesión persistente con Supabase, perfiles protegidos con Row Level Security y control de acceso por rutas."
+          },
+          {
+            "title": "Calidad y diseño.",
+            "text": "Configuré integración continua en GitHub Actions como requisito para fusionar cambios y un sistema de diseño en Material 3 con tokens semánticos."
+          }
+        ],
+        "caption": "Imágenes del sitio público de Kotoba",
+        "imageAltDesktop": "Sitio público de Kotoba: tutor de idiomas con IA que conversa contigo",
+        "imageAltMobile": "Sitio público de Kotoba en un teléfono"
+      }
+    }
+  },
+  "projects": {
+    "label": "Proyectos",
+    "title": "Proyectos.",
+    "architectureAria": "Arquitectura",
+    "othersLabel": "Otros proyectos",
+    "items": {
+      "readflow": {
+        "tag": "IA aplicada · Backend",
+        "tagline": "Aprendizaje con repetición espaciada e IA.",
+        "description": "Convierte documentos PDF en resúmenes y evaluaciones generadas con IA, y mide la retención del estudiante en dos momentos: inmediatamente después del estudio y 48 horas más tarde.",
+        "facts": [
+          { "label": "Rol", "value": "Backend Developer" },
+          { "label": "Equipo", "value": "3 integrantes" },
+          { "label": "Año", "value": "2026" }
+        ],
+        "highlights": [
+          "API REST en Node.js y TypeScript orientada a servicios",
+          "Resúmenes, evaluaciones y calificación automática con Gemini",
+          "Autenticación con JWT y refresh tokens rotativos"
+        ],
+        "links": { "live": "Ver sitio", "backend": "Código backend", "infra": "Infraestructura" },
+        "imageAlt": "Resumen generado por IA en ReadFlow",
+        "secondaryImageAlt": "Resultados de la evaluación espaciada a 48 horas en ReadFlow"
+      },
+      "warik": {
+        "tag": "Herramienta educativa",
+        "tagline": "Visualizador de algoritmos en Python.",
+        "description": "Ejecuta soluciones a problemas de entrevista técnica paso a paso y muestra el estado de cada estructura de datos en tiempo real. Desarrollado como apoyo para contenido educativo sobre algoritmos.",
+        "facts": [
+          { "label": "Rol", "value": "Desarrollo integral" },
+          { "label": "Tecnología", "value": "Pyodide · WebAssembly" },
+          { "label": "Despliegue", "value": "Cloudflare Pages" }
+        ],
+        "highlights": [
+          "Ejecución de Python directamente en el navegador, sin servidor",
+          "Visualización de arreglos, punteros, diccionarios, pilas, listas enlazadas y árboles",
+          "Controles de reproducción, velocidad y navegación por teclado"
+        ],
+        "links": { "live": "Ver proyecto" },
+        "imageAlt": "Warik ejecutando Reverse Linked List paso a paso"
+      },
+      "laberinto": {
+        "tag": "Juego educativo",
+        "tagline": "Introducción a la programación mediante niveles.",
+        "description": "Juego web en el que el usuario resuelve laberintos escribiendo programas con instrucciones en español, aplicando secuencias, ciclos y condicionales.",
+        "facts": [
+          { "label": "Rol", "value": "Desarrollo integral" },
+          { "label": "Contenido", "value": "4 niveles + bonus" },
+          { "label": "Privacidad", "value": "Sin registro ni cookies" }
+        ],
+        "highlights": [
+          "Intérprete propio para un lenguaje de instrucciones en español",
+          "Ejecución animada con modo de cámara lenta"
+        ],
+        "links": { "live": "Ver proyecto" },
+        "imageAlt": "Juego Laberinto, nivel 1"
+      }
+    },
+    "others": {
+      "antropometrico": {
+        "name": "Sistema Antropométrico",
+        "description": "Backend para el cálculo de mediciones antropométricas en expedientes clínicos."
+      },
+      "finanzapp": {
+        "name": "FinanzApp",
+        "description": "Aplicación Android de gastos compartidos con sincronización en tiempo real."
+      },
+      "municipal": {
+        "name": "Monitoreo de Servicios Públicos",
+        "description": "Interfaz móvil para la gestión de la recolección de residuos municipal."
+      },
+      "delivery": {
+        "name": "Plataforma de Delivery",
+        "description": "Aplicación web con API REST y tres roles: cliente, restaurante y repartidor."
+      }
+    }
+  },
+  "stack": {
+    "label": "Stack",
+    "titleStrong": "Stack",
+    "titleMuted": "técnico.",
+    "groups": {
+      "backend": "Backend y APIs",
+      "ai": "Inteligencia artificial",
+      "data": "Bases de datos",
+      "mobile": "Móvil",
+      "frontend": "Frontend",
+      "devops": "DevOps y nube"
+    }
+  },
+  "education": {
+    "label": "Formación",
+    "items": [
+      {
+        "title": "Ingeniería en Software",
+        "org": "Universidad Politécnica de Chiapas",
+        "meta": "2024 — Actualidad"
+      },
+      {
+        "title": "AWS Academy Cloud Foundations",
+        "org": "Amazon Web Services",
+        "meta": "Certificación"
+      },
+      {
+        "title": "Programación Básica en Python",
+        "org": "Universidad Politécnica de Chiapas",
+        "meta": "Certificación"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contacto",
+    "titleStrong": "Trabajemos",
+    "titleMuted": "juntos.",
+    "lead": "Abierto a oportunidades como desarrollador backend o full stack, en México o de forma remota.",
+    "cv": "Descargar CV",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Nombre completo",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "nombre@empresa.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Detalles del proyecto o de la posición",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando…",
+      "success": "Gracias, tu mensaje fue enviado. Te responderé pronto.",
+      "error": "No se pudo enviar el mensaje. Intenta de nuevo o escríbeme por correo.",
+      "invalid": "Revisa los campos marcados."
+    }
+  },
+  "footer": {
+    "role": "Desarrollador de Software · Backend e IA aplicada",
+    "sections": "Secciones",
+    "social": "Redes",
+    "contact": "Contacto",
+    "email": "Correo",
+    "backToTop": "Volver arriba",
+    "rights": "© 2026 Antonio Selvas"
   }
 }

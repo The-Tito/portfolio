@@ -1,17 +1,27 @@
-import { sectionIds } from "@/content/site";
-import { getCurrentDictionary } from "@/i18n/server";
+import { Footer } from "@/components/layout/footer";
+import { Contact } from "@/components/sections/contact";
+import { Experience } from "@/components/sections/experience";
+import { Hero } from "@/components/sections/hero";
+import { Profile } from "@/components/sections/profile";
+import { Projects } from "@/components/sections/projects";
+import { SectionIndex } from "@/components/sections/section-index";
+import { Stack } from "@/components/sections/stack";
+import { TechMarquee } from "@/components/sections/tech-marquee";
 
-/** Phase 1 scaffold: placeholder sections to exercise the layout chrome. Replaced in phase 2. */
-export default async function HomePage() {
-  const { t } = await getCurrentDictionary();
-
+export default function HomePage() {
   return (
-    <main id="main">
-      <section id={sectionIds.top} className="grid min-h-dvh place-items-center">
-        <h1 className="text-5xl font-semibold tracking-tight">{t.meta.title}</h1>
-      </section>
-      <section id={sectionIds.projects} className="min-h-dvh border-t border-line" />
-      <section id={sectionIds.contact} className="min-h-dvh border-t border-line" />
-    </main>
+    <>
+      <main id="main">
+        <Hero />
+        <TechMarquee />
+        <SectionIndex />
+        <Profile />
+        <Experience />
+        <Projects />
+        <Stack />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
