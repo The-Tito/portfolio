@@ -1,10 +1,233 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
-@theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — light is the base, `.dark` on <html> overrides.     */
+/* ------------------------------------------------------------------ */
+:root {
+  --accent: #ff5b23;
+
+  --bg: #f2f1ec;
+  --bg-2: #fbfaf7;
+  --bg-3: #e7e5de;
+  --line: rgb(17 18 20 / 0.12);
+  --fg: #111214;
+  --muted: #5c5f66;
+  --subtle: #8c8c87;
+  --dot: rgb(17 18 20 / 0.12);
+  --dock: rgb(251 250 247 / 0.78);
+  --ok: #047857;
+  --shadow: 0 30px 80px rgb(40 36 28 / 0.14);
+  /* Accent darkened for small text on light backgrounds (contrast). */
+  --accent-ink: color-mix(in oklab, var(--accent) 62%, #000);
+  --on-accent: #111214;
+
+  color-scheme: light;
+
+  /* Entrance timing: content waits for the intro loader on the first visit only. */
+  --intro-base: 1.75s;
+  --intro-delay: 2.4s;
 }
 
-body {
-  @apply bg-neutral-950 font-sans text-neutral-100 antialiased;
+.loader-seen {
+  --intro-base: 0.15s;
+  --intro-delay: 0.6s;
+}
+
+.dark {
+  --bg: #0b0c0e;
+  --bg-2: #131418;
+  --bg-3: #1a1c21;
+  --line: rgb(242 241 236 / 0.1);
+  --fg: #f2f1ec;
+  --muted: #8f939c;
+  --subtle: #5b5f68;
+  --dot: rgb(242 241 236 / 0.1);
+  --dock: rgb(19 20 24 / 0.72);
+  --ok: #34d399;
+  --shadow: 0 30px 80px rgb(0 0 0 / 0.45);
+  --accent-ink: var(--accent);
+  --on-accent: #0b0c0e;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-bg-3: var(--bg-3);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-on-accent: var(--on-accent);
+  --color-ok: var(--ok);
+  --color-dock: var(--dock);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-six-caps), sans-serif;
+
+  --shadow-soft: var(--shadow);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg font-sans text-[17px] leading-[1.55] text-fg antialiased;
+    /* No color transition here: the theme switch is animated by the View Transitions API. */
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 56px);
+}
+
+/* ------------------------------------------------------------------ */
+/* Intro loader — CSS only, shown once per session                     */
+/* ------------------------------------------------------------------ */
+@property --loader-count {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.loader {
+  animation: loader-lift 1s var(--ease-in-out-quart) 1.55s both;
+}
+
+.loader-count {
+  counter-reset: loader var(--loader-count);
+  animation: loader-count 1.45s cubic-bezier(0.6, 0, 0.2, 1) both;
+}
+
+.loader-count::after {
+  content: counter(loader);
+}
+
+.loader-seen .loader {
+  display: none;
+}
+
+@keyframes loader-count {
+  to {
+    --loader-count: 100;
+  }
+}
+
+@keyframes loader-lift {
+  to {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll progress — scroll-driven, no JS                              */
+/* ------------------------------------------------------------------ */
+.scroll-progress {
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: grow-x linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes grow-x {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Shared keyframes                                                    */
+/* ------------------------------------------------------------------ */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--ok) 55%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme switch — circular reveal via View Transitions API             */
+/* ------------------------------------------------------------------ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced motion                                                      */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .loader {
+    display: none;
+  }
 }

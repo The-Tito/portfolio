@@ -2,5 +2,19 @@
   "meta": {
     "title": "Antonio Selvas — Backend & IA",
     "description": "Desarrollador backend que integra IA en productos reales. Node.js, TypeScript, PostgreSQL y Flutter."
+  },
+  "common": {
+    "brand": "Antonio Selvas / Backend & IA",
+    "loader": "Antonio Selvas — Portafolio 2026",
+    "skipToContent": "Saltar al contenido",
+    "language": "Idioma",
+    "theme": "Cambiar tema"
+  },
+  "nav": {
+    "aria": "Navegación principal",
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "cv": "Descargar CV"
   }
 }
