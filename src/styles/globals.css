@@ -316,6 +316,148 @@
 }
 
 /* ------------------------------------------------------------------ */
+/* Motion — time-based entrances                                       */
+/* ------------------------------------------------------------------ */
+/* Hero headline: each line rises out of its mask, staggered by 90ms. */
+.hero-line > span {
+  animation: line-up 1.15s var(--ease-out-expo) both;
+  animation-delay: calc(var(--intro-base) + var(--line, 0) * 90ms);
+}
+
+.hero-fade {
+  animation: fade-up 1.2s var(--ease-out-expo) both;
+  animation-delay: calc(var(--intro-base) + 420ms + var(--fade, 0) * 140ms);
+}
+
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 50%;
+  background: var(--fg);
+  animation: drip 2s var(--ease-in-out-quart) infinite;
+}
+
+.float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+@keyframes line-up {
+  from {
+    transform: translateY(105%) rotate(2deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drip {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(200%);
+  }
+}
+
+@keyframes float-soft {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion — scroll-driven (CSS only, progressive enhancement)          */
+/* ------------------------------------------------------------------ */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+  }
+
+  /* Statement that fills from muted to full color while it crosses the viewport. */
+  .fill-text > span {
+    background: linear-gradient(90deg, var(--fg) 50%, var(--subtle) 50%) 100% 0 / 200% 100%;
+    background-clip: text;
+    color: transparent;
+    box-decoration-break: clone;
+    animation: fill-x linear both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 55%;
+  }
+
+  .timeline-fill {
+    animation: grow-y linear both;
+    animation-timeline: view();
+    animation-range: entry 20% exit 60%;
+  }
+
+  .parallax {
+    animation: parallax linear both;
+    animation-timeline: view();
+  }
+}
+
+/* Fallback for browsers without scroll-driven animations (see RevealFallback). */
+.reveal-fallback .reveal {
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+}
+
+.reveal-fallback .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(48px);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(56px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fill-x {
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes parallax {
+  from {
+    transform: translateY(48px);
+  }
+  to {
+    transform: translateY(-48px);
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /* Theme switch — circular reveal via View Transitions API             */
 /* ------------------------------------------------------------------ */
 ::view-transition-old(root),
@@ -336,8 +478,23 @@
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  /* Scroll-driven animations ignore duration, so switch them off explicitly. */
+  .reveal,
+  .fill-text > span,
+  .timeline-fill,
+  .parallax,
+  .scroll-progress,
+  .marquee-track {
+    animation: none !important;
+  }
+
+  .fill-text > span {
+    background-position: 0 0;
   }
 
   .loader {
