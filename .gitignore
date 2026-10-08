@@ -1,8 +1,39 @@
-# Notas privadas del proyecto (no se publican)
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+/build
+
+# env files — never commit secrets; .env.example documents the required keys
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# debug
+npm-debug.log*
+
+# misc
+.DS_Store
+*.pem
+
+# private project notes (brief, plan, design sources) — not published
 docs/
 
-# Capturas en bruto; las versiones optimizadas irán en public/
+# raw screenshots; optimized versions live in public/
 assets/captures/
 
-# macOS
-.DS_Store
+# local tooling
+.claude/
