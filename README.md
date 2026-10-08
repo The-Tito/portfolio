@@ -7,7 +7,7 @@ Portafolio personal. Desarrollador backend con enfoque en IA aplicada.
 - [Next.js 16](https://nextjs.org) (App Router) · React 19 · TypeScript
 - Tailwind CSS v4 con tokens de diseño en CSS variables (modo claro y oscuro)
 - i18n nativo de Next (`app/[locale]` + `proxy.ts`): ES / EN según el idioma del navegador
-- Tema claro/oscuro sin flash (script en línea) · Lenis (smooth scroll) · Motion y animaciones CSS ligadas al scroll
+- Tema claro/oscuro sin flash (script en línea) · Lenis (smooth scroll) · animaciones CSS ligadas al scroll (`animation-timeline`) con respaldo por IntersectionObserver
 
 ## Desarrollo
 

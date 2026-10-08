@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Six_Caps } from "next/font/google";
 
 import { Dock } from "@/components/layout/dock";
 import { IntroLoader } from "@/components/layout/intro-loader";
+import { RevealFallback } from "@/components/layout/reveal-fallback";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { ThemeScript } from "@/components/layout/theme-script";
@@ -49,6 +50,7 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
         <IntroLoader label={t.common.loader} />
         <ScrollProgress />
         <SmoothScroll />
+        <RevealFallback />
         <TopBar
           locale={locale}
           labels={{
